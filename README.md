@@ -3,22 +3,12 @@ Backend do Projeto SYSFISCAL
 
 Este Docker Compose roda [Hasura GraphQL Engine](https://github.com/hasura/graphql-engine) junto com Postgres e [pgAdmin4](https://www.pgadmin.org/) utilizando `docker-compose`.
 
-# Comandos Úteis
-Parar todas as intâncias do Docker
-`docker stop $(docker ps -q)`
-
-## Important endpoints
-
-- GraphQL endpoint will be `http://localhost:8080/v1/graphql`
-- Hasura Console will be available on `http://localhost:8080/console`
-- pgAdmin will be available on `http://localhost:5050`
-
 ## Pré-requisitos
 
 - [Docker](https://docs.docker.com/install/)
 - [Docker Compose](https://docs.docker.com/compose/install/)
 
-## Utilização
+# Utilização
 
 - Clone este repositório em sua máquina
 - Edite o arquivo `.envEXEMPLO`
@@ -32,9 +22,13 @@ Parar todas as intâncias do Docker
 
 ## Endpoints importantes
 
-- GraphQL endpoint será `http://localhost:8080/v1/graphql`
+- GraphQL está em `http://localhost:8080/v1/graphql`
 - Hasura Console está em `http://localhost:8080/console`
 - pgAdmin está em `http://localhost:5050`
+
+## Comandos Úteis
+- Listar todas as intâncias do Docker `docker ps`
+- Parar todas as intâncias do Docker `docker stop $(docker ps -q)`
 
 ### Referência
 Baseado no Sample localizado no seguinte [repositório](https://github.com/hasura/graphql-engine/tree/master/install-manifests/docker-compose-pgadmin).
