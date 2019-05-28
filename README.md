@@ -26,6 +26,25 @@ Este Docker Compose roda [Hasura GraphQL Engine](https://github.com/hasura/graph
 - Hasura Console está em [http://localhost:8080/console](http://localhost:8080/console)
 - pgAdmin está em [http://localhost:5050](http://localhost:5050)
 
+# Backup
+## Backup do volume de dados
+Instale a ferramenta de backup
+`docker pull loomchild/volume-backup`
+
+Faça a cópia dentro do container loomchild/volume-backup
+`docker run -v armbh_backend_sysfiscal_db_data:/volume -v /tmp:/backup --rm loomchild/volume-backup backup armbh_backend_sysfiscal_db_data_bk`
+
+Esta cópia foi pra dentro da imagem loomchild/volume-backup
+`Faça o backup da imagem para migrar para outro servidor - !ATENÇÃO - FALTA TESTAR`
+
+## Restore do volume de dados em novo host
+Migre a imagem gerada no passo anterior para o novo host
+
+Faça o restore com o comando abaixo no novo host
+`docker run -v armbh_backend_sysfiscal_db_data:/volume -v /tmp:/backup --rm loomchild/volume-backup restore armbh_backend_sysfiscal_db_data_bk`
+
+O PgAdmin deve ser configurado novamente, porém os dados estarão migrados no postgres.
+
 ## Comandos Úteis
 - Listar todas as intâncias do Docker `docker ps`
 - Parar todas as intâncias do Docker `docker stop $(docker ps -q)`
