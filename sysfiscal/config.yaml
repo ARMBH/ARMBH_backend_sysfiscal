@@ -1,1 +1,3 @@
 endpoint: http://localhost:8080
+# Você deve executar o comando `set HASURA_GRAPHQL_ADMIN_SECRET=<seu-admin-secret>` 
+# no prompt do Windows para que o console seja iniciado com sucesso.
