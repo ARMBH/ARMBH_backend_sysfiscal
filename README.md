@@ -22,9 +22,9 @@ Este Docker Compose roda [Hasura GraphQL Engine](https://github.com/hasura/graph
 
 ## Endpoints importantes
 
-- GraphQL está em `http://localhost:8080/v1/graphql`
-- Hasura Console está em `http://localhost:8080/console`
-- pgAdmin está em `http://localhost:5050`
+- GraphQL está em [http://localhost:8080/v1/graphql](http://localhost:8080/v1/graphql)
+- Hasura Console está em [http://localhost:8080/console](http://localhost:8080/console)
+- pgAdmin está em [http://localhost:5050](http://localhost:5050)
 
 ## Comandos Úteis
 - Listar todas as intâncias do Docker `docker ps`
