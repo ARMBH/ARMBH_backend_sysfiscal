@@ -28,7 +28,7 @@ Este Docker Compose roda [Hasura GraphQL Engine](https://github.com/hasura/graph
 
 # Backup
 ## Backup do volume de dados
-Instale a ferramenta de backup
+Instale a [ferramenta de backup](https://hub.docker.com/p/loomchild/volume-backup)
 `docker pull loomchild/volume-backup`
 
 Faça a cópia dentro do container loomchild/volume-backup
