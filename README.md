@@ -49,5 +49,14 @@ O PgAdmin deve ser configurado novamente, porém os dados estarão migrados no p
 - Listar todas as intâncias do Docker `docker ps`
 - Parar todas as intâncias do Docker `docker stop $(docker ps -q)`
 
+# Migração do schema de base de dados para novo servidor
+
+[Consulte a documentação](https://docs.hasura.io/1.0/graphql/manual/migrations/new-database.html)
+
+## Informações
+Você deve executar o comando `set HASURA_GRAPHQL_ADMIN_SECRET=<seu-admin-secret>` no prompt do Windows para que o console seja iniciado com sucesso.
+
+O arquivo de configuração `config.yaml` não aceita o uso de `.env`
+
 ### Referência
 Baseado no Sample localizado no seguinte [repositório](https://github.com/hasura/graphql-engine/tree/master/install-manifests/docker-compose-pgadmin).
