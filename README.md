@@ -7,6 +7,7 @@ Este Docker Compose roda [Hasura GraphQL Engine](https://github.com/hasura/graph
 
 - [Docker](https://docs.docker.com/install/)
 - [Docker Compose](https://docs.docker.com/compose/install/)
+- [Hasura CLI](https://docs.hasura.io/1.0/graphql/manual/hasura-cli/install-hasura-cli.html#install-hasura-cli)
 
 # Utilização
 Após [instalado](#instalação), basta digitar o comando em um terminal (se Windows, utilize o PowerShell)
