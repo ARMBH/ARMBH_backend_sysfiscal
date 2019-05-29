@@ -87,7 +87,13 @@ Inicie o console
 ```
 hasura console
 ```
+## Autenticação em Auth0.com
 
+Siga o passo-a-passo [neste endereço](https://learn.hasura.io/graphql/hasura/authentication/3-setup-env-vars-hasura) para Homologação e Produção.
+
+[JWT Debugger](https://jwt.io/)
+
+Devido à restrições da política CAMG não é possível testar a autenticação em `LOCALHOST` de máquinas da CA.
 ---------------------------------
 
 ### Referência
