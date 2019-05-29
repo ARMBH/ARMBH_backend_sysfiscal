@@ -1,3 +1,0 @@
-- args:
-    sql: COMMENT ON COLUMN "public"."processos"."user_id" IS 'null'
-  type: run_sql
