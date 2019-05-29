@@ -70,6 +70,8 @@ Atenção! - Não utilize o console acima caso esteja modificando o banco de dad
 [Consulte a documentação](https://docs.hasura.io/1.0/graphql/manual/migrations/new-database.html)
 
 ## Habilitando o console de migração
+O arquivo de configuração `config.yaml` não aceita o uso de `.env`
+
 Em um novo terminal:
 
 Configure a variável ADMIN_SECRET definida em seu arquivo `.env` com o comando
@@ -85,7 +87,7 @@ Inicie o console
 hasura console
 ```
 
-O arquivo de configuração `config.yaml` não aceita o uso de `.env`
+---------------------------------
 
 ### Referência
 Baseado no Sample localizado no seguinte [repositório](https://github.com/hasura/graphql-engine/tree/master/install-manifests/docker-compose-pgadmin).
