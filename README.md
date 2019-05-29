@@ -9,12 +9,16 @@ Este Docker Compose roda [Hasura GraphQL Engine](https://github.com/hasura/graph
 - [Docker Compose](https://docs.docker.com/compose/install/)
 
 # Utilização
+Após [instalado](#instalação), basta digitar o comando em um terminal (se Windows, utilize o PowerShell)
+`docker-compose up -d` 
+
+# Instalação
 
 - Clone este repositório em sua máquina
 - Edite o arquivo `.envEXEMPLO`
 - Renomeie o arquivo `.envEXEMPLO` para `.env`
 - Rode o comando em um PowerShell `docker-compose up -d` (se utilizar no Prompt comum não irá funcionar de modo correto)
-- Navegue para `http://localhost:5050`, faça login e adicione um novo servidor com os seguintes parâmetros:  
+- Navegue para o pgAdmin em `http://localhost:5050`, faça login e adicione um novo servidor com os seguintes parâmetros:  
   General - Name: Hasura  
   Connection - Host: `armbh_backend_sysfiscal_postgres_1`  
   Username: `postgres`  
@@ -50,6 +54,8 @@ O PgAdmin deve ser configurado novamente, porém os dados estarão migrados no p
 - Parar todas as intâncias do Docker `docker stop $(docker ps -q)`
 
 # Migração do schema de base de dados para novo servidor
+
+Atenção! - Não utilize o console acima caso esteja modificando o banco de dados. Sem o Hasura Cli não é possível salvar nenhum tipo de alteração feita no banco.
 
 [Consulte a documentação](https://docs.hasura.io/1.0/graphql/manual/migrations/new-database.html)
 
