@@ -1,0 +1,23 @@
+- args:
+    permission:
+      allow_aggregations: false
+      columns:
+      - is_completed
+      - is_public
+      - created_at
+      - updated_at
+      - user_id
+      - id
+      - title
+      filter:
+        _or:
+        - is_public:
+            _eq: true
+        - user_id:
+            _eq: X-Hasura-User-Id
+      limit: null
+    role: user
+    table:
+      name: processos
+      schema: public
+  type: create_select_permission
