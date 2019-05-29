@@ -76,7 +76,10 @@ Configure a variável ADMIN_SECRET definida em seu arquivo `.env` com o comando
 ```
 set HASURA_GRAPHQL_ADMIN_SECRET=<seu-admin-secret>
 ```
-
+Entre na pasta contendo o arquivo de configuração da migração
+```
+cd sysfiscal
+```
 Inicie o console
 ```
 hasura console
