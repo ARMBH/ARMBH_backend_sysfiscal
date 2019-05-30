@@ -93,7 +93,8 @@ Siga o passo-a-passo [neste endereço](https://learn.hasura.io/graphql/hasura/au
 
 [JWT Debugger](https://jwt.io/)
 
-Devido à restrições da política CAMG não é possível testar a autenticação em `LOCALHOST` de máquinas da CA.
+Devido às restrições da política CAMG não é possível testar a autenticação em `LOCALHOST` de máquinas da CA.
+
 ---------------------------------
 
 ### Referência
