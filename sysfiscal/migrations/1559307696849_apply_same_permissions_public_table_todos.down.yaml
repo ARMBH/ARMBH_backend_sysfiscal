@@ -1,0 +1,90 @@
+- args:
+    permission:
+      check:
+        user_id:
+          _eq: X-Hasura-User-Id
+      columns:
+      - is_public
+      - title
+      set:
+        user_id: x-hasura-User-Id
+    role: user
+    table:
+      name: processos
+      schema: public
+  type: create_insert_permission
+- args:
+    role: user
+    table:
+      name: processos
+      schema: public
+  type: drop_insert_permission
+- args:
+    permission:
+      allow_aggregations: false
+      columns:
+      - user_id
+      - title
+      - is_completed
+      - is_public
+      - created_at
+      - id
+      filter:
+        _or:
+        - is_public:
+            _eq: true
+        - user_id:
+            _eq: X-Hasura-User-Id
+    role: user
+    table:
+      name: processos
+      schema: public
+  type: create_select_permission
+- args:
+    role: user
+    table:
+      name: processos
+      schema: public
+  type: drop_select_permission
+- args:
+    permission:
+      columns:
+      - id
+      - is_completed
+      filter:
+        user_id:
+          _eq: X-Hasura-User-Id
+      set: {}
+    role: user
+    table:
+      name: processos
+      schema: public
+  type: create_update_permission
+- args:
+    role: user
+    table:
+      name: processos
+      schema: public
+  type: drop_update_permission
+- args:
+    permission:
+      filter:
+        user_id:
+          _eq: X-Hasura-User-Id
+    role: user
+    table:
+      name: processos
+      schema: public
+  type: create_delete_permission
+- args:
+    role: user
+    table:
+      name: processos
+      schema: public
+  type: drop_delete_permission
+- args:
+    role: user
+    table:
+      name: todos
+      schema: public
+  type: drop_insert_permission
