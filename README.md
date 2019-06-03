@@ -89,7 +89,7 @@ hasura console
 ```
 ## Autenticação em Auth0.com
 
-Siga o passo-a-passo [neste endereço](https://learn.hasura.io/graphql/hasura/authentication/3-setup-env-vars-hasura) para Homologação e Produção.
+Siga o passo-a-passo [neste endereço](https://learn.hasura.io/graphql/hasura/authentication) para Homologação e Produção.
 
 [JWT Debugger](https://jwt.io/)
 
