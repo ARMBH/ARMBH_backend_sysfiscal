@@ -1,0 +1,28 @@
+- args:
+    role: user
+    table:
+      name: processos
+      schema: public
+  type: drop_insert_permission
+- args:
+    permission:
+      check:
+        user_id:
+          _eq: X-Hasura-User-Id
+      columns:
+      - descricao
+      - documento_id
+      - is_completed
+      - is_public
+      - origem_solicitacao
+      - title
+      - updated_at
+      localPresets:
+      - key: ""
+        value: ""
+      set: {}
+    role: user
+    table:
+      name: processos
+      schema: public
+  type: create_insert_permission
