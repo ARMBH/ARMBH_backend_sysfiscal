@@ -1,0 +1,12 @@
+- args:
+    sql: CREATE TABLE "public"."historicos"("id" serial NOT NULL, "processo_id" integer
+      NOT NULL, "user_id" text NOT NULL, "tipo" text NOT NULL, "title" text NOT NULL,
+      "updated_at" timestamptz NOT NULL DEFAULT now(), PRIMARY KEY ("id") , FOREIGN
+      KEY ("processo_id") REFERENCES "public"."processos"("id") ON UPDATE restrict
+      ON DELETE restrict, FOREIGN KEY ("user_id") REFERENCES "public"."users"("id")
+      ON UPDATE restrict ON DELETE restrict, UNIQUE ("id"));
+  type: run_sql
+- args:
+    name: historicos
+    schema: public
+  type: add_existing_table_or_view

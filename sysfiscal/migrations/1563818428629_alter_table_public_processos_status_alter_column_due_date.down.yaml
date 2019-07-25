@@ -1,0 +1,11 @@
+- args:
+    sql: ALTER TABLE "public"."processos_status" ALTER COLUMN "due_date" TYPE timestamp
+      with time zone;
+  type: run_sql
+- args:
+    sql: ALTER TABLE ONLY "public"."processos_status" ALTER COLUMN "due_date" SET
+      DEFAULT now();
+  type: run_sql
+- args:
+    sql: COMMENT ON COLUMN "public"."processos_status"."due_date" IS 'null'
+  type: run_sql

@@ -1,0 +1,9 @@
+- args:
+    sql: ALTER TABLE "public"."processos" ADD COLUMN "is_public" bool
+  type: run_sql
+- args:
+    sql: ALTER TABLE "public"."processos" ALTER COLUMN "is_public" DROP NOT NULL
+  type: run_sql
+- args:
+    sql: ALTER TABLE "public"."processos" ALTER COLUMN "is_public" SET DEFAULT false
+  type: run_sql

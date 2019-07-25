@@ -1,0 +1,30 @@
+- args:
+    role: user
+    table:
+      name: processos
+      schema: public
+  type: drop_update_permission
+- args:
+    permission:
+      columns:
+      - data_prazo
+      - descricao
+      - documento_id
+      - is_completed
+      - is_public
+      - origem_solicitacao
+      - status
+      - title
+      - updated_at
+      filter:
+        user_id:
+          _eq: X-Hasura-User-Id
+      localPresets:
+      - key: ""
+        value: ""
+      set: {}
+    role: user
+    table:
+      name: processos
+      schema: public
+  type: create_update_permission

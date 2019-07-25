@@ -1,0 +1,6 @@
+- args:
+    sql: "\n           alter table \"public\".\"historicos\"\n           add constraint
+      \"historicos_historico_tipo_id_fkey\" \n           foreign key (\"historico_tipo_id\")
+      \n           references \"public\".\"historico_tipos\"\n           (\"id\")
+      on update restrict on delete restrict;\n      "
+  type: run_sql

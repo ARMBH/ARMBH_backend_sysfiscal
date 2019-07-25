@@ -1,0 +1,10 @@
+- args:
+    sql: ALTER TABLE "public"."historicos" ALTER COLUMN "updated_at" TYPE timestamp
+      with time zone;
+  type: run_sql
+- args:
+    sql: COMMENT ON COLUMN "public"."historicos"."updated_at" IS 'null'
+  type: run_sql
+- args:
+    sql: alter table "public"."historicos" rename column "created_at" to "updated_at";
+  type: run_sql

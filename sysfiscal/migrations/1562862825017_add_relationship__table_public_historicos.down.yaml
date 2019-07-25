@@ -1,0 +1,6 @@
+- args:
+    relationship: historico_tipo
+    table:
+      name: historicos
+      schema: public
+  type: drop_relationship

@@ -1,0 +1,19 @@
+- args:
+    permission:
+      allow_aggregations: false
+      columns:
+      - base64
+      - created_at
+      - id
+      - name
+      - processo_id
+      - size
+      - type
+      - user_id
+      filter: {}
+      limit: null
+    role: user
+    table:
+      name: documentos
+      schema: public
+  type: create_select_permission

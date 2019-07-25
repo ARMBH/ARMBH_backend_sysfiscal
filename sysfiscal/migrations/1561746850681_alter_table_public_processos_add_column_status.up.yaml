@@ -1,0 +1,4 @@
+- args:
+    sql: ALTER TABLE "public"."processos" ADD COLUMN "status" text NOT NULL DEFAULT
+      'Novo'
+  type: run_sql

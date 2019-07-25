@@ -1,0 +1,15 @@
+- args:
+    permission:
+      columns:
+      - name
+      - zone
+      filter: {}
+      localPresets:
+      - key: ""
+        value: ""
+      set: {}
+    role: user
+    table:
+      name: municipios
+      schema: public
+  type: create_update_permission

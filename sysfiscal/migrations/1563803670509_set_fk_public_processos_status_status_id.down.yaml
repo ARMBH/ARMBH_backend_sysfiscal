@@ -1,0 +1,4 @@
+- args:
+    sql: "\n          alter table \"public\".\"processos_status\" drop constraint
+      \"processos_status_status_id_fkey\"\n      "
+  type: run_sql

@@ -1,0 +1,10 @@
+- args:
+    sql: ALTER TABLE "public"."processos" ALTER COLUMN "data_prazo" TYPE timestamp
+      with time zone;
+  type: run_sql
+- args:
+    sql: COMMENT ON COLUMN "public"."processos"."data_prazo" IS 'null'
+  type: run_sql
+- args:
+    sql: alter table "public"."processos" rename column "due_date" to "data_prazo";
+  type: run_sql

@@ -1,0 +1,4 @@
+- args:
+    sql: ALTER TABLE "public"."enderecos" ADD COLUMN "created_at" timestamptz NOT
+      NULL DEFAULT now()
+  type: run_sql

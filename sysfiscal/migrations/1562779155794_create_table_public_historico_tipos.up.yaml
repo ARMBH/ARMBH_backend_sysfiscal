@@ -1,0 +1,8 @@
+- args:
+    sql: CREATE TABLE "public"."historico_tipos"("id" serial NOT NULL, "name" text
+      NOT NULL, "type" text NOT NULL, PRIMARY KEY ("id") , UNIQUE ("id"));
+  type: run_sql
+- args:
+    name: historico_tipos
+    schema: public
+  type: add_existing_table_or_view

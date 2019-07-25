@@ -1,0 +1,28 @@
+- args:
+    role: user
+    table:
+      name: processos
+      schema: public
+  type: drop_select_permission
+- args:
+    permission:
+      allow_aggregations: true
+      columns:
+      - created_at
+      - data_prazo
+      - descricao
+      - documento_id
+      - id
+      - is_completed
+      - is_public
+      - origem_solicitacao
+      - status
+      - name
+      - updated_at
+      - user_id
+      filter: {}
+    role: user
+    table:
+      name: processos
+      schema: public
+  type: create_select_permission

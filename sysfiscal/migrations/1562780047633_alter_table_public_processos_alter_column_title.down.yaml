@@ -1,0 +1,6 @@
+- args:
+    sql: COMMENT ON COLUMN "public"."processos"."title" IS 'null'
+  type: run_sql
+- args:
+    sql: alter table "public"."processos" rename column "name" to "title";
+  type: run_sql

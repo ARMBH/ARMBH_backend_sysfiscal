@@ -1,0 +1,6 @@
+- args:
+    relationship: processo
+    table:
+      name: enderecos
+      schema: public
+  type: drop_relationship

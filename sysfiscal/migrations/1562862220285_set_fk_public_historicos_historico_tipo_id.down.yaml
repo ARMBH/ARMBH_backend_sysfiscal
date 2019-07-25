@@ -1,0 +1,4 @@
+- args:
+    sql: "\n          alter table \"public\".\"historicos\" drop constraint \"historicos_historico_tipo_id_fkey\"\n
+      \     "
+  type: run_sql

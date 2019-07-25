@@ -1,0 +1,12 @@
+- args:
+    sql: CREATE TABLE "public"."enderecos"("id" serial NOT NULL, "processo_id" integer
+      NOT NULL, "cep" text NOT NULL, "logradouro" text NOT NULL, "complemento" text
+      NOT NULL, "bairro" text NOT NULL, "localidade" text NOT NULL, "uf" text NOT
+      NULL, "ibge" text , "area" integer , PRIMARY KEY ("id") , FOREIGN KEY ("processo_id")
+      REFERENCES "public"."processos"("id") ON UPDATE restrict ON DELETE restrict,
+      UNIQUE ("id"), UNIQUE ("processo_id"));
+  type: run_sql
+- args:
+    name: enderecos
+    schema: public
+  type: add_existing_table_or_view
