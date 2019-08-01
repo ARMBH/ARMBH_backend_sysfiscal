@@ -1,0 +1,6 @@
+- args:
+    sql: ALTER TABLE "public"."users" ADD CONSTRAINT "users_email_key" UNIQUE ("email")
+  type: run_sql
+- args:
+    sql: COMMENT ON COLUMN "public"."users"."email" IS ''
+  type: run_sql

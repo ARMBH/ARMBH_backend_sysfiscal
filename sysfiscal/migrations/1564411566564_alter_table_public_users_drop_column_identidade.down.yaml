@@ -1,0 +1,6 @@
+- args:
+    sql: ALTER TABLE "public"."users" ADD COLUMN "identidade" text
+  type: run_sql
+- args:
+    sql: ALTER TABLE "public"."users" ALTER COLUMN "identidade" DROP NOT NULL
+  type: run_sql

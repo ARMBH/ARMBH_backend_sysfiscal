@@ -1,0 +1,6 @@
+- args:
+    relationship: documentos
+    table:
+      name: users
+      schema: public
+  type: drop_relationship

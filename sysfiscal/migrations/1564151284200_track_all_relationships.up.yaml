@@ -1,0 +1,96 @@
+- args:
+    name: processos
+    table:
+      name: demandantes
+      schema: public
+    using:
+      foreign_key_constraint_on:
+        column: demandante_id
+        table:
+          name: processos
+          schema: public
+  type: create_array_relationship
+- args:
+    name: historicos
+    table:
+      name: historico_tipos
+      schema: public
+    using:
+      foreign_key_constraint_on:
+        column: historico_tipo_id
+        table:
+          name: historicos
+          schema: public
+  type: create_array_relationship
+- args:
+    name: processos
+    table:
+      name: origems
+      schema: public
+    using:
+      foreign_key_constraint_on:
+        column: origem_id
+        table:
+          name: processos
+          schema: public
+  type: create_array_relationship
+- args:
+    name: documentos
+    table:
+      name: processos
+      schema: public
+    using:
+      foreign_key_constraint_on:
+        column: processo_id
+        table:
+          name: documentos
+          schema: public
+  type: create_array_relationship
+- args:
+    name: historicos
+    table:
+      name: processos
+      schema: public
+    using:
+      foreign_key_constraint_on:
+        column: processo_id
+        table:
+          name: historicos
+          schema: public
+  type: create_array_relationship
+- args:
+    name: processos_statuses
+    table:
+      name: processos
+      schema: public
+    using:
+      foreign_key_constraint_on:
+        column: processo_id
+        table:
+          name: processos_status
+          schema: public
+  type: create_array_relationship
+- args:
+    name: processos
+    table:
+      name: status
+      schema: public
+    using:
+      foreign_key_constraint_on:
+        column: status_id
+        table:
+          name: processos
+          schema: public
+  type: create_array_relationship
+- args:
+    name: processos_statuses
+    table:
+      name: status
+      schema: public
+    using:
+      foreign_key_constraint_on:
+        column: status_id
+        table:
+          name: processos_status
+          schema: public
+  type: create_array_relationship

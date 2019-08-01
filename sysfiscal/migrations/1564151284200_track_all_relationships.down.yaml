@@ -1,0 +1,48 @@
+- args:
+    relationship: processos
+    table:
+      name: demandantes
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: historicos
+    table:
+      name: historico_tipos
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: processos
+    table:
+      name: origems
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: documentos
+    table:
+      name: processos
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: historicos
+    table:
+      name: processos
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: processos_statuses
+    table:
+      name: processos
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: processos
+    table:
+      name: status
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: processos_statuses
+    table:
+      name: status
+      schema: public
+  type: drop_relationship
