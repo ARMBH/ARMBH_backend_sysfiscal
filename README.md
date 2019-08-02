@@ -87,6 +87,145 @@ Inicie o console
 ```
 hasura console
 ```
+## Dados iniciais 
+
+Execute as seguintes consultas no Banco de Dados para adição dos dados padrões do sistema:
+```
+# Tabela Demandantes
+mutation insert_demandantes {
+  insert_demandantes(objects: [
+  {id:1, name: "Denúncia"},
+  {id:2, name: "Rotina"},
+  {id:3, name: "Prefeitura"},
+  {id:4, name: "Conjunta"},
+  {id:5, name: "Solicitação"}, 
+  {id:6, name: "Auto-Denúncia"},   
+  ]) {
+    affected_rows
+  }
+}
+
+#Tabela Origems
+mutation insert_origems {
+  insert_origems(objects: [
+    {id:1, name: "AGE"},
+    {id:2, name: "AL-MG"},
+    {id:3, name: "Anônima"},
+    {id:4, name: "ARMBH"},
+    {id:5, name: "Empreendedor"},
+    {id:6, name: "Justiça"},
+    {id:7, name: "Meio Ambiente"},
+    {id:8, name: "Ministério Público"},
+    {id:9, name: "Outros"},
+    {id:10, name: "Polícia Ambiental"},
+    {id:11, name: "Prefeitura"},
+    {id:12, name: "TJ-MG"}
+]) {
+    affected_rows
+  }
+}
+
+#Tabela Status
+mutation insert_status {
+  insert_status(objects: [
+    {id:1, name: "Abertura De Processo",type: "secondary"},
+    {id:2, name: "Aguardando Documentação",type: "info"},
+    {id:3, name: "Aguardando Pagamento de Multa",type: "info"},
+    {id:4, name: "Aguardando Recurso (CAR)",type: "info"},
+    {id:5, name: "Aguardando Recurso (DG)",type: "info"},
+    {id:6, name: "Aguardando Vistoria",type: "info"},
+    {id:7, name: "Anuência Corretiva",type: "warning"},
+    {id:8, name: "Assinatura De CAC",type: "warning"},
+    {id:9, name: "Assinatura De TAC",type: "warning"},
+    {id:10, name: "Comunicação Enviada",type: "warning"},
+    {id:11, name: "DAE Encaminhado",type: "warning"},
+    {id:12, name: "Descumpriu CAC",type: "danger"},
+    {id:13, name: "Mudou Endereço",type: "danger"},
+    {id:14, name: "Multa Cancelada Pela CAR",type: "warning"},
+    {id:15, name: "Multa Parcialmente Cancelada Pela CAR",type: "warning"},
+    {id:16, name: "Não Pagou Multa",type: "danger"},
+    {id:17, name: "Processo Encerrado",type: "success"},
+    {id:18, name: "Processo Na CAR",type: "warning"},
+    {id:19, name: "Protocolado",type: "warning"}
+  ]) {
+    affected_rows
+  }
+}
+
+#Tabela Municipios
+mutation insert_municipios {
+  insert_municipios(objects:
+    [
+    {id:1, name: "Baldim",zone: "RMBH"},
+    {id:2, name: "Belo Horizonte",zone: "RMBH"},
+    {id:3, name: "Betim",zone: "RMBH"},
+    {id:4, name: "Brumadinho",zone: "RMBH"},
+    {id:5, name: "Caeté",zone: "RMBH"},
+    {id:6, name: "Capim Branco",zone: "RMBH"},
+    {id:7, name: "Confins",zone: "RMBH"},
+    {id:8, name: "Contagem",zone: "RMBH"},
+    {id:9, name: "Esmeraldas",zone: "RMBH"},
+    {id:10, name: "Florestal",zone: "RMBH"},
+    {id:11, name: "Ibirité",zone: "RMBH"},
+    {id:12, name: "Igarapé",zone: "RMBH"},
+    {id:13, name: "Itaguara",zone: "RMBH"},
+    {id:14, name: "Itatiaiuçu",zone: "RMBH"},
+    {id:15, name: "Jaboticatubas",zone: "RMBH"},
+    {id:16, name: "Juatuba",zone: "RMBH"},
+    {id:17, name: "Lagoa Santa",zone: "RMBH"},
+    {id:18, name: "Mário Campos",zone: "RMBH"},
+    {id:19, name: "Mateus Leme",zone: "RMBH"},
+    {id:20, name: "Matozinhos",zone: "RMBH"},
+    {id:21, name: "Nova Lima",zone: "RMBH"},
+    {id:22, name: "Nova União",zone: "RMBH"},
+    {id:23, name: "Pedro Leopoldo",zone: "RMBH"},
+    {id:24, name: "Raposos",zone: "RMBH"},
+    {id:25, name: "Ribeirão das Neves",zone: "RMBH"},
+    {id:26, name: "Rio Acima",zone: "RMBH"},
+    {id:27, name: "Rio Manso",zone: "RMBH"},
+    {id:28, name: "Sabará",zone: "RMBH"},
+    {id:29, name: "Santa Luzia",zone: "RMBH"},
+    {id:30, name: "São Joaquim de Bicas",zone: "RMBH"},
+    {id:31, name: "São José da Lapa",zone: "RMBH"},
+    {id:32, name: "Sarzedo",zone: "RMBH"},
+    {id:33, name: "Taquaraçu de Minas",zone: "RMBH"},
+    {id:34, name: "Vespasiano",zone: "RMBH"},
+    {id:35, name: "Belo Vale",zone: "Colar"},
+    {id:36, name: "Bom Jesus do Amparo",zone: "Colar"},
+    {id:37, name: "Bonfim",zone: "Colar"},
+    {id:38, name: "Fortuna de Minas",zone: "Colar"},
+    {id:39, name: "Funilândia",zone: "Colar"},
+    {id:40, name: "Inhaúma",zone: "Colar"},
+    {id:41, name: "Itabirito",zone: "Colar"},
+    {id:42, name: "Itaúna",zone: "Colar"},
+    {id:43, name: "Moeda",zone: "Colar"},
+    {id:44, name: "Pará de Minas",zone: "Colar"},
+    {id:45, name: "Prudente de Morais",zone: "Colar"},
+    {id:46, name: "Santa Bárbara",zone: "Colar"},
+    {id:47, name: "São Gonçalo do Rio Abaixo",zone: "Colar"},
+    {id:48, name: "São José da Varginha",zone: "Colar"},
+    {id:49, name: "Sete Lagoas",zone: "Colar"}
+  ]
+  ) {
+    affected_rows
+  }
+}
+
+#Tabela Historico_tipos
+mutation insert_historico_tipos {
+  insert_historico_tipos(objects: 
+    [
+      {id:1, name: "Processo",type: "primary"},
+      {id:2, name: "Documento",type: "warning"},
+      {id:3, name: "Comentário",type: "success"},
+      {id:4, name: "Prazo",type: "danger"},
+      {id:5, name: "Status",type: "danger"}
+    ]) {
+    affected_rows
+  }
+}
+```
+
 ## Autenticação em Auth0.com
 
 Siga o passo-a-passo [neste endereço](https://learn.hasura.io/graphql/hasura/authentication) para Homologação e Produção.
