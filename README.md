@@ -91,8 +91,9 @@ hasura console
 
 Execute as seguintes consultas no Banco de Dados para adição dos dados padrões do sistema:
 ```
+# Insere todos os dados padrões do Sistema
+mutation Insere_Dados {
 # Tabela Demandantes
-mutation insert_demandantes {
   insert_demandantes(objects: [
   {id:1, name: "Denúncia"},
   {id:2, name: "Rotina"},
@@ -103,10 +104,9 @@ mutation insert_demandantes {
   ]) {
     affected_rows
   }
-}
+
 
 #Tabela Origems
-mutation insert_origems {
   insert_origems(objects: [
     {id:1, name: "AGE"},
     {id:2, name: "AL-MG"},
@@ -123,10 +123,9 @@ mutation insert_origems {
 ]) {
     affected_rows
   }
-}
+
 
 #Tabela Status
-mutation insert_status {
   insert_status(objects: [
     {id:1, name: "Abertura De Processo",type: "secondary"},
     {id:2, name: "Aguardando Documentação",type: "info"},
@@ -150,10 +149,9 @@ mutation insert_status {
   ]) {
     affected_rows
   }
-}
+
 
 #Tabela Municipios
-mutation insert_municipios {
   insert_municipios(objects:
     [
     {id:1, name: "Baldim",zone: "RMBH"},
@@ -209,10 +207,8 @@ mutation insert_municipios {
   ) {
     affected_rows
   }
-}
-
+  
 #Tabela Historico_tipos
-mutation insert_historico_tipos {
   insert_historico_tipos(objects: 
     [
       {id:1, name: "Processo",type: "primary"},
