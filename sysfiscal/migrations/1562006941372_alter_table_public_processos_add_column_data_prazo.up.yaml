@@ -1,4 +1,0 @@
-- args:
-    sql: ALTER TABLE "public"."processos" ADD COLUMN "data_prazo" timestamptz NOT
-      NULL DEFAULT now()
-  type: run_sql

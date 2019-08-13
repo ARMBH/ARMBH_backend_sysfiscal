@@ -1,5 +1,0 @@
-- args:
-    cascade: false
-    sql: ALTER TABLE processos ADD CONSTRAINT titlechkbchar CHECK (char_length(title)
-      > 3);
-  type: run_sql

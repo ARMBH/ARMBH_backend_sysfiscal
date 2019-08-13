@@ -1,6 +1,0 @@
-- args:
-    relationship: processos
-    table:
-      name: municipios
-      schema: public
-  type: drop_relationship

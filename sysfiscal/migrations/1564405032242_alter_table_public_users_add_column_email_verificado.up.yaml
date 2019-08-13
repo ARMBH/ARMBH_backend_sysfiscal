@@ -1,4 +1,0 @@
-- args:
-    sql: ALTER TABLE "public"."users" ADD COLUMN "email_verificado" boolean NOT NULL
-      DEFAULT false
-  type: run_sql

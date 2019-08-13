@@ -1,6 +1,0 @@
-- args:
-    relationship: processo
-    table:
-      name: historicos
-      schema: public
-  type: drop_relationship

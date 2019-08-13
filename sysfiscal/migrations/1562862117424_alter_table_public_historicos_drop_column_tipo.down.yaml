@@ -1,6 +1,0 @@
-- args:
-    sql: ALTER TABLE "public"."historicos" ADD COLUMN "tipo" text
-  type: run_sql
-- args:
-    sql: ALTER TABLE "public"."historicos" ALTER COLUMN "tipo" DROP NOT NULL
-  type: run_sql

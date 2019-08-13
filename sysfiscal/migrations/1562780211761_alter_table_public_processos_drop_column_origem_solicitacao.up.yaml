@@ -1,3 +1,0 @@
-- args:
-    sql: ALTER TABLE "public"."processos" DROP COLUMN "origem_solicitacao" CASCADE
-  type: run_sql

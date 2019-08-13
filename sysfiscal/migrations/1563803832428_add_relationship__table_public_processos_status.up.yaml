@@ -1,8 +1,0 @@
-- args:
-    name: processo
-    table:
-      name: processos_status
-      schema: public
-    using:
-      foreign_key_constraint_on: processo_id
-  type: create_object_relationship

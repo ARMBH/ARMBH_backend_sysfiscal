@@ -1,3 +1,0 @@
-- args:
-    sql: ALTER TABLE "public"."processos" DROP COLUMN "is_completed" CASCADE
-  type: run_sql

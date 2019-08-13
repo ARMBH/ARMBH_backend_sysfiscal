@@ -1,6 +1,0 @@
-- args:
-    sql: COMMENT ON COLUMN "public"."historicos"."title" IS ''
-  type: run_sql
-- args:
-    sql: alter table "public"."historicos" rename column "title" to "name";
-  type: run_sql

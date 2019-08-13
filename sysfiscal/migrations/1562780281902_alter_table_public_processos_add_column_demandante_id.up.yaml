@@ -1,3 +1,0 @@
-- args:
-    sql: ALTER TABLE "public"."processos" ADD COLUMN "demandante_id" integer NOT NULL
-  type: run_sql

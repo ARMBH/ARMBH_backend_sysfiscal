@@ -1,4 +1,0 @@
-- args:
-    sql: ALTER TABLE "public"."historicos" ADD COLUMN "historico_tipo_id" integer
-      NOT NULL
-  type: run_sql

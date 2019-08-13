@@ -1,3 +1,0 @@
-- args:
-    sql: ALTER TABLE "public"."processos" DROP COLUMN "status" CASCADE
-  type: run_sql
