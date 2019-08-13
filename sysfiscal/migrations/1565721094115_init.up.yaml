@@ -280,7 +280,6 @@
           - name
           - origem_id
           - status_id
-          - title
           - user_id
           set:
             user_id: x-hasura-User-Id
@@ -502,7 +501,6 @@
           columns:
           - is_completed
           - is_public
-          - title
           - user_id
           set:
             user_id: x-hasura-User-Id
@@ -518,7 +516,6 @@
           allow_aggregations: false
           columns:
           - id
-          - title
           - is_completed
           - is_public
           - created_at
