@@ -8,7 +8,7 @@
       definition:
         forward_client_headers: true
         headers: []
-        url_from_env: ${REMOTE_SCHEMA_AUTH0}
+        url_from_env: REMOTE_SCHEMA_AUTH0
       name: auth0
     tables:
     - array_relationships: []
