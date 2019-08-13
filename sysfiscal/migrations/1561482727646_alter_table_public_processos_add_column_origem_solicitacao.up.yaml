@@ -1,4 +1,0 @@
-- args:
-    sql: ALTER TABLE "public"."processos" ADD COLUMN "origem_solicitacao" text NOT
-      NULL
-  type: run_sql

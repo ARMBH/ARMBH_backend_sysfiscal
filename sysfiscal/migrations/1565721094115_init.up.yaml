@@ -1,0 +1,665 @@
+- args:
+    allowlist: []
+    functions: []
+    query_collections: []
+    query_templates: []
+    remote_schemas:
+    - comment: null
+      definition:
+        forward_client_headers: true
+        headers: []
+        url: ${REMOTE_SCHEMA_AUTH0}
+        url_from_env: null
+      name: auth0
+    tables:
+    - array_relationships: []
+      delete_permissions:
+      - comment: null
+        permission:
+          filter: {}
+        role: user
+      event_triggers: []
+      insert_permissions:
+      - comment: null
+        permission:
+          check: {}
+          columns:
+          - due_date
+          - name
+          - processo_id
+          - status_id
+          set:
+            user_id: x-hasura-User-Id
+        role: user
+      object_relationships:
+      - comment: null
+        name: processo
+        using:
+          foreign_key_constraint_on: processo_id
+      - comment: null
+        name: status
+        using:
+          foreign_key_constraint_on: status_id
+      - comment: null
+        name: user
+        using:
+          foreign_key_constraint_on: user_id
+      select_permissions:
+      - comment: null
+        permission:
+          allow_aggregations: false
+          columns:
+          - created_at
+          - due_date
+          - id
+          - name
+          - processo_id
+          - status_id
+          - user_id
+          filter: {}
+        role: user
+      table: processos_status
+      update_permissions:
+      - comment: null
+        permission:
+          columns:
+          - due_date
+          - name
+          - status_id
+          - user_id
+          filter: {}
+          set: {}
+        role: user
+    - array_relationships:
+      - comment: null
+        name: processos
+        using:
+          foreign_key_constraint_on:
+            column: empreendedor_id
+            table: processos
+      delete_permissions:
+      - comment: null
+        permission:
+          filter: {}
+        role: user
+      event_triggers: []
+      insert_permissions:
+      - comment: null
+        permission:
+          check: {}
+          columns:
+          - cpf
+          - endereco
+          - name
+          set: {}
+        role: user
+      object_relationships: []
+      select_permissions:
+      - comment: null
+        permission:
+          allow_aggregations: false
+          columns:
+          - cpf
+          - created_at
+          - endereco
+          - id
+          - name
+          filter: {}
+        role: user
+      table: empreendedores
+      update_permissions:
+      - comment: null
+        permission:
+          columns:
+          - cpf
+          - endereco
+          - name
+          filter: {}
+          set: {}
+        role: user
+    - array_relationships:
+      - comment: null
+        name: processos
+        using:
+          foreign_key_constraint_on:
+            column: user_id
+            table: processos
+      - comment: null
+        name: todos
+        using:
+          foreign_key_constraint_on:
+            column: user_id
+            table: todos
+      - comment: null
+        name: documentos
+        using:
+          foreign_key_constraint_on:
+            column: user_id
+            table: documentos
+      - comment: null
+        name: historicos
+        using:
+          foreign_key_constraint_on:
+            column: user_id
+            table: historicos
+      - comment: null
+        name: processos_statuses
+        using:
+          foreign_key_constraint_on:
+            column: user_id
+            table: processos_status
+      delete_permissions: []
+      event_triggers: []
+      insert_permissions: []
+      object_relationships: []
+      select_permissions:
+      - comment: null
+        permission:
+          allow_aggregations: false
+          columns:
+          - cpf
+          - created_at
+          - email
+          - email_verificado
+          - id
+          - name
+          - role
+          - telefone
+          filter: {}
+        role: user
+      table: users
+      update_permissions:
+      - comment: null
+        permission:
+          columns:
+          - cpf
+          - last_seen
+          - name
+          - telefone
+          filter:
+            id:
+              _eq: X-Hasura-User-Id
+          set: {}
+        role: user
+    - array_relationships: []
+      delete_permissions: []
+      event_triggers: []
+      insert_permissions:
+      - comment: null
+        permission:
+          check: {}
+          columns:
+          - area
+          - bairro
+          - cep
+          - complemento
+          - ibge
+          - localidade
+          - logradouro
+          - processo_id
+          - uf
+          set: {}
+        role: user
+      object_relationships:
+      - comment: null
+        name: processo
+        using:
+          foreign_key_constraint_on: processo_id
+      select_permissions:
+      - comment: null
+        permission:
+          allow_aggregations: false
+          columns:
+          - id
+          - processo_id
+          - cep
+          - logradouro
+          - complemento
+          - bairro
+          - localidade
+          - uf
+          - ibge
+          - area
+          - created_at
+          filter: {}
+        role: user
+      table: enderecos
+      update_permissions:
+      - comment: null
+        permission:
+          columns:
+          - area
+          - bairro
+          - cep
+          - complemento
+          - ibge
+          - localidade
+          - logradouro
+          - processo_id
+          - uf
+          filter: {}
+          set: {}
+        role: user
+    - array_relationships:
+      - comment: null
+        name: documentos
+        using:
+          foreign_key_constraint_on:
+            column: processo_id
+            table: documentos
+      - comment: null
+        name: historicos
+        using:
+          foreign_key_constraint_on:
+            column: processo_id
+            table: historicos
+      - comment: null
+        name: processos_statuses
+        using:
+          foreign_key_constraint_on:
+            column: processo_id
+            table: processos_status
+      delete_permissions:
+      - comment: null
+        permission:
+          filter:
+            user_id:
+              _eq: X-Hasura-User-Id
+        role: user
+      event_triggers: []
+      insert_permissions:
+      - comment: null
+        permission:
+          check:
+            user_id:
+              _eq: X-Hasura-User-Id
+          columns:
+          - demandante_id
+          - description
+          - due_date
+          - municipio_id
+          - name
+          - origem_id
+          - status_id
+          - title
+          - user_id
+          set:
+            user_id: x-hasura-User-Id
+        role: user
+      object_relationships:
+      - comment: null
+        name: user
+        using:
+          foreign_key_constraint_on: user_id
+      - comment: null
+        name: demandante
+        using:
+          foreign_key_constraint_on: demandante_id
+      - comment: null
+        name: municipio
+        using:
+          foreign_key_constraint_on: municipio_id
+      - comment: null
+        name: origem
+        using:
+          foreign_key_constraint_on: origem_id
+      - comment: null
+        name: status
+        using:
+          foreign_key_constraint_on: status_id
+      - comment: null
+        name: endereco
+        using:
+          manual_configuration:
+            column_mapping:
+              id: processo_id
+            remote_table: enderecos
+      - comment: null
+        name: empreendedore
+        using:
+          foreign_key_constraint_on: empreendedor_id
+      select_permissions:
+      - comment: null
+        permission:
+          allow_aggregations: true
+          columns:
+          - id
+          - municipio_id
+          - status_id
+          - origem_id
+          - demandante_id
+          - due_date
+          - description
+          - user_id
+          - created_at
+          - name
+          filter: {}
+        role: user
+      table: processos
+      update_permissions:
+      - comment: null
+        permission:
+          columns:
+          - demandante_id
+          - description
+          - due_date
+          - municipio_id
+          - name
+          - origem_id
+          - status_id
+          filter: {}
+          set: {}
+        role: user
+    - array_relationships:
+      - comment: null
+        name: processos
+        using:
+          foreign_key_constraint_on:
+            column: municipio_id
+            table: processos
+      delete_permissions: []
+      event_triggers: []
+      insert_permissions: []
+      object_relationships: []
+      select_permissions:
+      - comment: null
+        permission:
+          allow_aggregations: false
+          columns:
+          - id
+          - name
+          - zone
+          filter: {}
+        role: user
+      table: municipios
+      update_permissions:
+      - comment: null
+        permission:
+          columns:
+          - name
+          - zone
+          filter: {}
+          set: {}
+        role: user
+    - array_relationships: []
+      delete_permissions: []
+      event_triggers: []
+      insert_permissions:
+      - comment: null
+        permission:
+          check:
+            user_id:
+              _eq: X-Hasura-User-Id
+          columns:
+          - historico_tipo_id
+          - name
+          - processo_id
+          set:
+            user_id: x-hasura-User-Id
+        role: user
+      object_relationships:
+      - comment: null
+        name: user
+        using:
+          foreign_key_constraint_on: user_id
+      - comment: null
+        name: processo
+        using:
+          foreign_key_constraint_on: processo_id
+      - comment: null
+        name: historico_tipo
+        using:
+          foreign_key_constraint_on: historico_tipo_id
+      select_permissions:
+      - comment: null
+        permission:
+          allow_aggregations: false
+          columns:
+          - processo_id
+          - historico_tipo_id
+          - created_at
+          - name
+          - user_id
+          - id
+          filter: {}
+        role: user
+      table: historicos
+      update_permissions: []
+    - array_relationships: []
+      delete_permissions:
+      - comment: null
+        permission:
+          filter:
+            user_id:
+              _eq: X-Hasura-User-Id
+        role: user
+      event_triggers: []
+      insert_permissions:
+      - comment: null
+        permission:
+          check: {}
+          columns:
+          - base64
+          - description
+          - name
+          - processo_id
+          - size
+          - type
+          - user_id
+          set: {}
+        role: user
+      object_relationships:
+      - comment: null
+        name: processo
+        using:
+          foreign_key_constraint_on: processo_id
+      - comment: null
+        name: user
+        using:
+          foreign_key_constraint_on: user_id
+      select_permissions:
+      - comment: null
+        permission:
+          allow_aggregations: false
+          columns:
+          - base64
+          - created_at
+          - description
+          - id
+          - name
+          - processo_id
+          - size
+          - type
+          - user_id
+          filter: {}
+        role: user
+      table: documentos
+      update_permissions:
+      - comment: null
+        permission:
+          columns:
+          - description
+          - name
+          filter:
+            user_id:
+              _eq: X-Hasura-User-Id
+          set: {}
+        role: user
+    - array_relationships: []
+      delete_permissions:
+      - comment: null
+        permission:
+          filter:
+            user_id:
+              _eq: X-Hasura-User-Id
+        role: user
+      event_triggers: []
+      insert_permissions:
+      - comment: null
+        permission:
+          check:
+            user_id:
+              _eq: X-Hasura-User-Id
+          columns:
+          - is_completed
+          - is_public
+          - title
+          - user_id
+          set:
+            user_id: x-hasura-User-Id
+        role: user
+      object_relationships:
+      - comment: null
+        name: user
+        using:
+          foreign_key_constraint_on: user_id
+      select_permissions:
+      - comment: null
+        permission:
+          allow_aggregations: false
+          columns:
+          - id
+          - title
+          - is_completed
+          - is_public
+          - created_at
+          - user_id
+          filter:
+            _or:
+            - is_public:
+                _eq: true
+            - user_id:
+                _eq: X-Hasura-User-Id
+        role: user
+      table: todos
+      update_permissions:
+      - comment: null
+        permission:
+          columns:
+          - id
+          - is_completed
+          filter:
+            user_id:
+              _eq: X-Hasura-User-Id
+          set: {}
+        role: user
+    - array_relationships:
+      - comment: null
+        name: processos
+        using:
+          foreign_key_constraint_on:
+            column: status_id
+            table: processos
+      - comment: null
+        name: processos_statuses
+        using:
+          foreign_key_constraint_on:
+            column: status_id
+            table: processos_status
+      delete_permissions: []
+      event_triggers: []
+      insert_permissions: []
+      object_relationships: []
+      select_permissions:
+      - comment: null
+        permission:
+          allow_aggregations: false
+          columns:
+          - id
+          - name
+          - type
+          filter: {}
+        role: user
+      table: status
+      update_permissions: []
+    - array_relationships:
+      - comment: null
+        name: processos
+        using:
+          foreign_key_constraint_on:
+            column: demandante_id
+            table: processos
+      delete_permissions: []
+      event_triggers: []
+      insert_permissions: []
+      object_relationships: []
+      select_permissions:
+      - comment: null
+        permission:
+          allow_aggregations: false
+          columns:
+          - id
+          - name
+          filter: {}
+        role: user
+      table: demandantes
+      update_permissions: []
+    - array_relationships: []
+      delete_permissions: []
+      event_triggers: []
+      insert_permissions: []
+      object_relationships:
+      - comment: null
+        name: user
+        using:
+          manual_configuration:
+            column_mapping:
+              id: id
+            remote_table: users
+      select_permissions:
+      - comment: null
+        permission:
+          allow_aggregations: false
+          columns:
+          - id
+          - last_seen
+          filter: {}
+        role: user
+      table: online_users
+      update_permissions: []
+    - array_relationships:
+      - comment: null
+        name: processos
+        using:
+          foreign_key_constraint_on:
+            column: origem_id
+            table: processos
+      delete_permissions: []
+      event_triggers: []
+      insert_permissions: []
+      object_relationships: []
+      select_permissions:
+      - comment: null
+        permission:
+          allow_aggregations: false
+          columns:
+          - id
+          - name
+          filter: {}
+        role: user
+      table: origems
+      update_permissions: []
+    - array_relationships:
+      - comment: null
+        name: historicos
+        using:
+          foreign_key_constraint_on:
+            column: historico_tipo_id
+            table: historicos
+      delete_permissions: []
+      event_triggers: []
+      insert_permissions: []
+      object_relationships: []
+      select_permissions:
+      - comment: null
+        permission:
+          allow_aggregations: false
+          columns:
+          - id
+          - name
+          - type
+          filter: {}
+        role: user
+      table: historico_tipos
+      update_permissions: []
+  type: replace_metadata

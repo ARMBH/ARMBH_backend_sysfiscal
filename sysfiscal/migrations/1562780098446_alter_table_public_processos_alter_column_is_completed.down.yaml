@@ -1,6 +1,0 @@
-- args:
-    sql: ALTER TABLE "public"."processos" ALTER COLUMN "is_completed" TYPE boolean;
-  type: run_sql
-- args:
-    sql: COMMENT ON COLUMN "public"."processos"."is_completed" IS 'null'
-  type: run_sql

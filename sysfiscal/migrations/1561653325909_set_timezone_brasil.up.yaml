@@ -1,4 +1,0 @@
-- args:
-    cascade: false
-    sql: SET TIMEZONE TO 'America/Sao_Paulo'
-  type: run_sql

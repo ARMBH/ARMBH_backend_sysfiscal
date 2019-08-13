@@ -1,8 +1,0 @@
-- args:
-    name: origem
-    table:
-      name: processos
-      schema: public
-    using:
-      foreign_key_constraint_on: origem_id
-  type: create_object_relationship

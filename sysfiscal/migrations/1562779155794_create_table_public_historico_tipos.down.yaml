@@ -1,3 +1,0 @@
-- args:
-    sql: DROP TABLE "public"."historico_tipos"
-  type: run_sql

@@ -1,5 +1,0 @@
-- args:
-    sql: alter table "public"."processos" add constraint "processos_user_id_fkey"
-      foreign key ("user_id") references "public"."users"("id") on update restrict
-      on delete restrict;
-  type: run_sql

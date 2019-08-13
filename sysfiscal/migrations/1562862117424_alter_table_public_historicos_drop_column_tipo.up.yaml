@@ -1,3 +1,0 @@
-- args:
-    sql: ALTER TABLE "public"."historicos" DROP COLUMN "tipo" CASCADE
-  type: run_sql

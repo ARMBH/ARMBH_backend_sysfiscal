@@ -1,3 +1,0 @@
-- args:
-    sql: ALTER TABLE "public"."users" DROP COLUMN "cpf"
-  type: run_sql

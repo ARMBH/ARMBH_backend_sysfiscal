@@ -1,9 +1,0 @@
-- args:
-    sql: ALTER TABLE "public"."processos" ADD COLUMN "status" text
-  type: run_sql
-- args:
-    sql: ALTER TABLE "public"."processos" ALTER COLUMN "status" DROP NOT NULL
-  type: run_sql
-- args:
-    sql: ALTER TABLE "public"."processos" ALTER COLUMN "status" SET DEFAULT 'Novo'::text
-  type: run_sql

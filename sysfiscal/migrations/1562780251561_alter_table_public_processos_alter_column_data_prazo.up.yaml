@@ -1,9 +1,0 @@
-- args:
-    sql: ALTER TABLE "public"."processos" ALTER COLUMN "data_prazo" TYPE timestamptz;
-  type: run_sql
-- args:
-    sql: COMMENT ON COLUMN "public"."processos"."data_prazo" IS ''
-  type: run_sql
-- args:
-    sql: alter table "public"."processos" rename column "data_prazo" to "due_date";
-  type: run_sql

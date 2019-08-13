@@ -1,6 +1,0 @@
-- args:
-    relationship: origem
-    table:
-      name: processos
-      schema: public
-  type: drop_relationship

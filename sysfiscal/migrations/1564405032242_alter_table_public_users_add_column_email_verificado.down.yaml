@@ -1,3 +1,0 @@
-- args:
-    sql: ALTER TABLE "public"."users" DROP COLUMN "email_verificado"
-  type: run_sql

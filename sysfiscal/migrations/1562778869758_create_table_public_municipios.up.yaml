@@ -1,8 +1,0 @@
-- args:
-    sql: CREATE TABLE "public"."municipios"("id" serial NOT NULL, "name" text NOT
-      NULL, "zone" text NOT NULL, PRIMARY KEY ("id") , UNIQUE ("id"));
-  type: run_sql
-- args:
-    name: municipios
-    schema: public
-  type: add_existing_table_or_view
