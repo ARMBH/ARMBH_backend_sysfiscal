@@ -87,7 +87,23 @@ Inicie o console
 ```
 hasura console
 ```
-## Dados iniciais 
+## Dados iniciais
+Migre o esquema de banco de dados executando os comandos a partir de
+```
+cd sysfiscal
+```
+
+Comando para aplicar a migração
+
+```
+hasura migrate apply
+```
+
+Verificar se está ok
+```
+hasura migrate status
+```
+
 
 Execute as seguintes consultas no Banco de Dados para adição dos dados padrões do sistema:
 ```

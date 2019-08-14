@@ -3,13 +3,7 @@
     functions: []
     query_collections: []
     query_templates: []
-    remote_schemas:
-    - comment: null
-      definition:
-        forward_client_headers: true
-        headers: []
-        url_from_env: REMOTE_SCHEMA_AUTH0
-      name: auth0
+    remote_schemas: []
     tables:
     - array_relationships: []
       delete_permissions:
@@ -501,6 +495,7 @@
           columns:
           - is_completed
           - is_public
+          - title
           - user_id
           set:
             user_id: x-hasura-User-Id
@@ -516,6 +511,7 @@
           allow_aggregations: false
           columns:
           - id
+          - title
           - is_completed
           - is_public
           - created_at
