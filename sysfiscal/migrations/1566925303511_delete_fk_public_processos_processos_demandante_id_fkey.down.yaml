@@ -1,0 +1,4 @@
+- args:
+    sql: alter table "public"."processos" add foreign key ("demandante_id") references
+      "public"."demandantes"("id") on update restrict on delete restrict;
+  type: run_sql

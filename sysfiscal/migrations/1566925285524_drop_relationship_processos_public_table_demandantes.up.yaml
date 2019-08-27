@@ -1,0 +1,6 @@
+- args:
+    relationship: processos
+    table:
+      name: demandantes
+      schema: public
+  type: drop_relationship

@@ -108,20 +108,6 @@ hasura migrate status
 Execute as seguintes consultas no Banco de Dados para adição dos dados padrões do sistema:
 ```
 # Insere todos os dados padrões do Sistema
-mutation Insere_Dados {
-# Tabela Demandantes
-  insert_demandantes(objects: [
-  {id:1, name: "Denúncia"},
-  {id:2, name: "Rotina"},
-  {id:3, name: "Prefeitura"},
-  {id:4, name: "Conjunta"},
-  {id:5, name: "Solicitação"}, 
-  {id:6, name: "Auto-Denúncia"},   
-  ]) {
-    affected_rows
-  }
-
-
 #Tabela Origems
   insert_origems(objects: [
     {id:1, name: "AGE"},

@@ -1,0 +1,26 @@
+- args:
+    role: user
+    table:
+      name: processos
+      schema: public
+  type: drop_select_permission
+- args:
+    permission:
+      allow_aggregations: true
+      columns:
+      - id
+      - municipio_id
+      - status_id
+      - origem_id
+      - demandante_id
+      - due_date
+      - description
+      - user_id
+      - created_at
+      - name
+      filter: {}
+    role: user
+    table:
+      name: processos
+      schema: public
+  type: create_select_permission

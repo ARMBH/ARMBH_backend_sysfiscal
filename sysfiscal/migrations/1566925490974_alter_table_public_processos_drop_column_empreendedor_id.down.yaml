@@ -1,0 +1,12 @@
+- args:
+    sql: ALTER TABLE "public"."processos" ADD COLUMN "empreendedor_id" int4
+  type: run_sql
+- args:
+    sql: ALTER TABLE "public"."processos" ALTER COLUMN "empreendedor_id" DROP NOT
+      NULL
+  type: run_sql
+- args:
+    sql: ALTER TABLE "public"."processos" ADD CONSTRAINT processos_empreendedor_id_fkey
+      FOREIGN KEY (empreendedor_id) REFERENCES "public"."empreendedores" (id) ON DELETE
+      restrict ON UPDATE restrict
+  type: run_sql
