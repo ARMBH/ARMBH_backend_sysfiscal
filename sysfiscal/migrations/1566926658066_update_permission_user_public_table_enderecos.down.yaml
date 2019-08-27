@@ -1,0 +1,28 @@
+- args:
+    role: user
+    table:
+      name: enderecos
+      schema: public
+  type: drop_update_permission
+- args:
+    permission:
+      columns:
+      - area
+      - bairro
+      - cep
+      - complemento
+      - ibge
+      - localidade
+      - logradouro
+      - processo_id
+      - uf
+      filter: {}
+      localPresets:
+      - key: ""
+        value: ""
+      set: {}
+    role: user
+    table:
+      name: enderecos
+      schema: public
+  type: create_update_permission

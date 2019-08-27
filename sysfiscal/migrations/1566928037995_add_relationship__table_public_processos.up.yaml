@@ -1,0 +1,12 @@
+- args:
+    name: processos_enderecos
+    table:
+      name: processos
+      schema: public
+    using:
+      foreign_key_constraint_on:
+        column: processo_id
+        table:
+          name: processos_enderecos
+          schema: public
+  type: create_array_relationship
