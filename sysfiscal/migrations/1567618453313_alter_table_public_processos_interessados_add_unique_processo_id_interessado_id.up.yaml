@@ -1,0 +1,4 @@
+- args:
+    sql: alter table "public"."processos_interessados" add constraint "processos_interessados_processo_id_interessado_id_key"
+      unique ("processo_id", "interessado_id");
+  type: run_sql

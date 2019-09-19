@@ -1,0 +1,8 @@
+- args:
+    name: interessado
+    table:
+      name: processo_interessados
+      schema: public
+    using:
+      foreign_key_constraint_on: interessado_id
+  type: create_object_relationship

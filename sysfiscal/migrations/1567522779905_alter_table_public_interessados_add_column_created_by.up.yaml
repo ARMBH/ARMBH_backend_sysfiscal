@@ -1,0 +1,3 @@
+- args:
+    sql: ALTER TABLE "public"."interessados" ADD COLUMN "created_by" text NOT NULL;
+  type: run_sql

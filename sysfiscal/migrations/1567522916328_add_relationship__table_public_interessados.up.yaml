@@ -1,0 +1,8 @@
+- args:
+    name: criado_por
+    table:
+      name: interessados
+      schema: public
+    using:
+      foreign_key_constraint_on: created_by
+  type: create_object_relationship

@@ -1,0 +1,76 @@
+- args:
+    name: processos_enderecos
+    table:
+      name: enderecos
+      schema: public
+    using:
+      foreign_key_constraint_on:
+        column: endereco_id
+        table:
+          name: processos_enderecos
+          schema: public
+  type: create_array_relationship
+- args:
+    name: interessados
+    table:
+      name: enderecos
+      schema: public
+    using:
+      foreign_key_constraint_on:
+        column: endereco_id
+        table:
+          name: interessados
+          schema: public
+  type: create_array_relationship
+- args:
+    name: processos_interessados
+    table:
+      name: interessados
+      schema: public
+    using:
+      foreign_key_constraint_on:
+        column: interessado_id
+        table:
+          name: processos_interessados
+          schema: public
+  type: create_array_relationship
+- args:
+    name: interessados
+    table:
+      name: origems
+      schema: public
+    using:
+      foreign_key_constraint_on:
+        column: origem_id
+        table:
+          name: interessados
+          schema: public
+  type: create_array_relationship
+- args:
+    name: processos_interessados
+    table:
+      name: processos
+      schema: public
+    using:
+      foreign_key_constraint_on:
+        column: processo_id
+        table:
+          name: processos_interessados
+          schema: public
+  type: create_array_relationship
+- args:
+    name: processo
+    table:
+      name: processos_interessados
+      schema: public
+    using:
+      foreign_key_constraint_on: processo_id
+  type: create_object_relationship
+- args:
+    name: interessado
+    table:
+      name: processos_interessados
+      schema: public
+    using:
+      foreign_key_constraint_on: interessado_id
+  type: create_object_relationship

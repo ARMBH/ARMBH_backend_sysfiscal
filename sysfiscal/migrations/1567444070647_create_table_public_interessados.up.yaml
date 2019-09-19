@@ -1,0 +1,17 @@
+- args:
+    sql: "CREATE TABLE \"public\".\"interessados\"(\"id\" serial NOT NULL, \"created_at\"
+      timestamptz NOT NULL DEFAULT now(), \"updated_at\" timestamptz NOT NULL DEFAULT
+      now(), \"cpf\" text NOT NULL, \"tratamento\" text, \"nome\" text NOT NULL, \"endereco_id\"
+      integer, \"email\" text, \"origem_id\" integer NOT NULL, PRIMARY KEY (\"id\")
+      , UNIQUE (\"id\"), UNIQUE (\"cpf\"));\nCREATE OR REPLACE FUNCTION \"public\".\"set_current_timestamp_updated_at\"()\nRETURNS
+      TRIGGER AS $$\nDECLARE\n  _new record;\nBEGIN\n  _new := NEW;\n  _new.\"updated_at\"
+      = NOW();\n  RETURN _new;\nEND;\n$$ LANGUAGE plpgsql;\nCREATE TRIGGER \"set_public_interessados_updated_at\"\nBEFORE
+      UPDATE ON \"public\".\"interessados\"\nFOR EACH ROW\nEXECUTE PROCEDURE \"public\".\"set_current_timestamp_updated_at\"();\nCOMMENT
+      ON TRIGGER \"set_public_interessados_updated_at\" ON \"public\".\"interessados\"
+      \nIS 'trigger to set value of column \"updated_at\" to current timestamp on
+      row update';\n"
+  type: run_sql
+- args:
+    name: interessados
+    schema: public
+  type: add_existing_table_or_view

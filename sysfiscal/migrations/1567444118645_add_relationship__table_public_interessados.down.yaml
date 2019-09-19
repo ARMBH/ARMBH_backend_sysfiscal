@@ -1,0 +1,6 @@
+- args:
+    relationship: origem
+    table:
+      name: interessados
+      schema: public
+  type: drop_relationship

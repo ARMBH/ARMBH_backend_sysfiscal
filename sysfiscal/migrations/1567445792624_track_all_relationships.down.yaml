@@ -1,0 +1,42 @@
+- args:
+    relationship: processos_enderecos
+    table:
+      name: enderecos
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: interessados
+    table:
+      name: enderecos
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: processos_interessados
+    table:
+      name: interessados
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: interessados
+    table:
+      name: origems
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: processos_interessados
+    table:
+      name: processos
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: processo
+    table:
+      name: processos_interessados
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: interessado
+    table:
+      name: processos_interessados
+      schema: public
+  type: drop_relationship

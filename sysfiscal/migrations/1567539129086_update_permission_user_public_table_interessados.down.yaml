@@ -1,0 +1,29 @@
+- args:
+    role: user
+    table:
+      name: interessados
+      schema: public
+  type: drop_insert_permission
+- args:
+    permission:
+      check: {}
+      columns:
+      - cpf
+      - created_by
+      - email
+      - endereco_id
+      - nome
+      - origem_id
+      - tratamento
+      localPresets:
+      - key: created_by
+        value: x-hasura-User-Id
+      - key: ""
+        value: ""
+      set:
+        created_by: x-hasura-User-Id
+    role: user
+    table:
+      name: interessados
+      schema: public
+  type: create_insert_permission

@@ -1,0 +1,25 @@
+- args:
+    role: user
+    table:
+      name: interessados
+      schema: public
+  type: drop_insert_permission
+- args:
+    permission:
+      check: {}
+      columns:
+      - cpf
+      - email
+      - endereco_id
+      - nome
+      - origem_id
+      - tratamento
+      localPresets:
+      - key: ""
+        value: ""
+      set: {}
+    role: user
+    table:
+      name: interessados
+      schema: public
+  type: create_insert_permission

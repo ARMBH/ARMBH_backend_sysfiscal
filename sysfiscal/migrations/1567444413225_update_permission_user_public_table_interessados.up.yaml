@@ -1,0 +1,19 @@
+- args:
+    permission:
+      columns:
+      - cpf
+      - email
+      - endereco_id
+      - nome
+      - origem_id
+      - tratamento
+      filter: {}
+      localPresets:
+      - key: ""
+        value: ""
+      set: {}
+    role: user
+    table:
+      name: interessados
+      schema: public
+  type: create_update_permission

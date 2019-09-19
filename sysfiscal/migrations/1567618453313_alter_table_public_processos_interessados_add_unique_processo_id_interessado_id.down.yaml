@@ -1,0 +1,3 @@
+- args:
+    sql: alter table "public"."processos_interessados" drop constraint "processos_interessados_processo_id_interessado_id_key";
+  type: run_sql

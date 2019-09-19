@@ -1,0 +1,26 @@
+- args:
+    role: user
+    table:
+      name: interessados
+      schema: public
+  type: drop_select_permission
+- args:
+    permission:
+      allow_aggregations: true
+      columns:
+      - cpf
+      - created_at
+      - created_by
+      - email
+      - endereco_id
+      - id
+      - name
+      - origem_id
+      - tratamento
+      - updated_at
+      filter: {}
+    role: user
+    table:
+      name: interessados
+      schema: public
+  type: create_select_permission

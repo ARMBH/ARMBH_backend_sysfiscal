@@ -1,0 +1,16 @@
+- args:
+    permission:
+      allow_aggregations: false
+      columns:
+      - created_at
+      - id
+      - interessado_id
+      - processo_id
+      - updated_at
+      filter: {}
+      limit: null
+    role: user
+    table:
+      name: processo_interessados
+      schema: public
+  type: create_select_permission

@@ -1,0 +1,19 @@
+- args:
+    sql: "CREATE TABLE \"public\".\"processos_interessados\"(\"id\" serial NOT NULL,
+      \"created_at\" timestamptz NOT NULL DEFAULT now(), \"updated_at\" timestamptz
+      NOT NULL DEFAULT now(), \"processo_id\" integer NOT NULL, \"interessado_id\"
+      integer NOT NULL, PRIMARY KEY (\"id\") , FOREIGN KEY (\"processo_id\") REFERENCES
+      \"public\".\"processos\"(\"id\") ON UPDATE restrict ON DELETE restrict, FOREIGN
+      KEY (\"interessado_id\") REFERENCES \"public\".\"interessados\"(\"id\") ON UPDATE
+      restrict ON DELETE restrict, UNIQUE (\"id\"));\nCREATE OR REPLACE FUNCTION \"public\".\"set_current_timestamp_updated_at\"()\nRETURNS
+      TRIGGER AS $$\nDECLARE\n  _new record;\nBEGIN\n  _new := NEW;\n  _new.\"updated_at\"
+      = NOW();\n  RETURN _new;\nEND;\n$$ LANGUAGE plpgsql;\nCREATE TRIGGER \"set_public_processos_interessados_updated_at\"\nBEFORE
+      UPDATE ON \"public\".\"processos_interessados\"\nFOR EACH ROW\nEXECUTE PROCEDURE
+      \"public\".\"set_current_timestamp_updated_at\"();\nCOMMENT ON TRIGGER \"set_public_processos_interessados_updated_at\"
+      ON \"public\".\"processos_interessados\" \nIS 'trigger to set value of column
+      \"updated_at\" to current timestamp on row update';\n"
+  type: run_sql
+- args:
+    name: processos_interessados
+    schema: public
+  type: add_existing_table_or_view
