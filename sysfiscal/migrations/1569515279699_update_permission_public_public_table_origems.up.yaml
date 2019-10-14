@@ -1,0 +1,13 @@
+- args:
+    permission:
+      allow_aggregations: false
+      columns:
+      - id
+      - name
+      filter: {}
+      limit: null
+    role: public
+    table:
+      name: origems
+      schema: public
+  type: create_select_permission

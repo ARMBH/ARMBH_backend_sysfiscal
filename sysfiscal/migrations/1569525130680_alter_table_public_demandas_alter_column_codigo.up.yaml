@@ -1,0 +1,7 @@
+- args:
+    sql: ALTER TABLE "public"."demandas" ADD CONSTRAINT "demandas_codigo_key" UNIQUE
+      ("codigo")
+  type: run_sql
+- args:
+    sql: COMMENT ON COLUMN "public"."demandas"."codigo" IS E''
+  type: run_sql

@@ -17,6 +17,7 @@ services:
       PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL:?err}
       PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD:?err}
   graphql-engine:
+    container_name: sysfiscal_hasura
     image: hasura/graphql-engine:v1.0.0-beta.2
     ports:
     - "8080:8080"
@@ -29,5 +30,17 @@ services:
       HASURA_GRAPHQL_ADMIN_SECRET: ${HASURA_GRAPHQL_ADMIN_SECRET:?err}
       HASURA_GRAPHQL_JWT_SECRET: ${HASURA_GRAPHQL_JWT_SECRET:?err}
       HASURA_GRAPHQL_UNAUTHORIZED_ROLE: ${HASURA_GRAPHQL_UNAUTHORIZED_ROLE:?err}
+  hook:
+    container_name: sysfiscal_hook
+    image: hook
+    ports:
+    - "8081:8081"
+    restart: always
+    environment:
+      HASURA_GRAPHQL_ADMIN_SECRET: ${HASURA_GRAPHQL_ADMIN_SECRET:?err}
+      SMTP_FROM: ${SMTP_FROM:?err}
+      SMTP_ADDRESS: ${SMTP_ADDRESS:?err}
+      SMTP_PORT: ${SMTP_PORT:?err}
+      SMTP_PASSWORD: ${SMTP_PASSWORD:?err}
 volumes:
   db_data:

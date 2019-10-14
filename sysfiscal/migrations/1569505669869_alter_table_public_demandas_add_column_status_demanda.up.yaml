@@ -1,0 +1,4 @@
+- args:
+    sql: ALTER TABLE "public"."demandas" ADD COLUMN "status_demanda" text NOT NULL
+      DEFAULT 'Nova';
+  type: run_sql

@@ -1,0 +1,12 @@
+- args:
+    name: processos
+    table:
+      name: demandas
+      schema: public
+    using:
+      foreign_key_constraint_on:
+        column: demanda_codigo
+        table:
+          name: processos
+          schema: public
+  type: create_array_relationship

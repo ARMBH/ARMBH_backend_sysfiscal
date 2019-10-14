@@ -1,0 +1,25 @@
+- args:
+    permission:
+      allow_aggregations: true
+      columns:
+      - id
+      - municipio_id
+      - origem_id
+      - codigo
+      - coordenada_x
+      - coordenada_y
+      - description
+      - empreendedor
+      - empreendedor_dados
+      - empreendimento
+      - empreendimento_dados
+      - pto_de_referencia
+      - created_at
+      - updated_at
+      filter: {}
+      limit: null
+    role: user
+    table:
+      name: demandas
+      schema: public
+  type: create_select_permission

@@ -1,0 +1,34 @@
+- args:
+    role: public
+    table:
+      name: demandas
+      schema: public
+  type: drop_select_permission
+- args:
+    permission:
+      allow_aggregations: false
+      columns:
+      - codigo
+      - coordenada_x
+      - coordenada_y
+      - created_at
+      - description
+      - empreendedor
+      - empreendedor_dados
+      - empreendimento
+      - empreendimento_dados
+      - id
+      - municipio_id
+      - origem_id
+      - pto_de_referencia
+      - status_demanda
+      - updated_at
+      filter:
+        codigo:
+          _eq: X-Hasura-Codigo
+      limit: 1
+    role: public
+    table:
+      name: demandas
+      schema: public
+  type: create_select_permission

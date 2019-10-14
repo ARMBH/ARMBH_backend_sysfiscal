@@ -1,0 +1,6 @@
+- args:
+    sql: "\n           alter table \"public\".\"processos\"\n           add constraint
+      \"processos_demanda_codigo_fkey\" \n           foreign key (\"demanda_codigo\")
+      \n           references \"public\".\"demandas\"\n           (\"codigo\") on
+      update restrict on delete restrict;\n      "
+  type: run_sql

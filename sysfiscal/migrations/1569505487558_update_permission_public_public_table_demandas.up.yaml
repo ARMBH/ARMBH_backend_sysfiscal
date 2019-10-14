@@ -1,0 +1,23 @@
+- args:
+    permission:
+      allow_upsert: true
+      check: {}
+      columns:
+      - coordenada_x
+      - coordenada_y
+      - description
+      - empreendedor
+      - empreendedor_dados
+      - empreendimento
+      - empreendimento_dados
+      - municipio_id
+      - pto_de_referencia
+      localPresets:
+      - key: ""
+        value: ""
+      set: {}
+    role: public
+    table:
+      name: demandas
+      schema: public
+  type: create_insert_permission

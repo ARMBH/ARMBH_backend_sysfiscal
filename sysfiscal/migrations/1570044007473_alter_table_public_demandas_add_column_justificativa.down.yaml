@@ -1,0 +1,3 @@
+- args:
+    sql: ALTER TABLE "public"."demandas" DROP COLUMN "justificativa";
+  type: run_sql

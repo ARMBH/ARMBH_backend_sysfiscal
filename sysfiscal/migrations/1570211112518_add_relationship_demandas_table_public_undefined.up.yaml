@@ -1,0 +1,12 @@
+- args:
+    name: demandas
+    table:
+      name: municipios
+      schema: public
+    using:
+      foreign_key_constraint_on:
+        column: municipio_id
+        table:
+          name: demandas
+          schema: public
+  type: create_array_relationship

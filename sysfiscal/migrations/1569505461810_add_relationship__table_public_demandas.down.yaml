@@ -1,0 +1,6 @@
+- args:
+    relationship: origem
+    table:
+      name: demandas
+      schema: public
+  type: drop_relationship

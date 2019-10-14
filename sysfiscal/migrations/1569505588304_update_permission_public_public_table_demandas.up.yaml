@@ -1,0 +1,27 @@
+- args:
+    permission:
+      allow_aggregations: false
+      columns:
+      - id
+      - municipio_id
+      - origem_id
+      - codigo
+      - coordenada_x
+      - coordenada_y
+      - description
+      - empreendedor
+      - empreendedor_dados
+      - empreendimento
+      - empreendimento_dados
+      - pto_de_referencia
+      - created_at
+      - updated_at
+      filter:
+        codigo:
+          _eq: X-Hasura-Codigo
+      limit: 1
+    role: public
+    table:
+      name: demandas
+      schema: public
+  type: create_select_permission

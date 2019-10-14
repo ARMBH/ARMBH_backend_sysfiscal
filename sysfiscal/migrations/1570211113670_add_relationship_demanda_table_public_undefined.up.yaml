@@ -1,0 +1,8 @@
+- args:
+    name: demanda
+    table:
+      name: processos
+      schema: public
+    using:
+      foreign_key_constraint_on: demanda_codigo
+  type: create_object_relationship

@@ -1,0 +1,25 @@
+- args:
+    permission:
+      columns:
+      - codigo
+      - coordenada_x
+      - coordenada_y
+      - description
+      - empreendedor
+      - empreendedor_dados
+      - empreendimento
+      - empreendimento_dados
+      - municipio_id
+      - origem_id
+      - pto_de_referencia
+      - status_demanda
+      filter: {}
+      localPresets:
+      - key: ""
+        value: ""
+      set: {}
+    role: user
+    table:
+      name: demandas
+      schema: public
+  type: create_update_permission
