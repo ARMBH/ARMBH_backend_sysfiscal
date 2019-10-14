@@ -1,0 +1,15 @@
+- args:
+    enable_manual: false
+    headers: []
+    insert:
+      columns: '*'
+    name: notificacao_historicos
+    retry_conf:
+      interval_sec: 10
+      num_retries: 0
+      timeout_sec: 60
+    table:
+      name: historicos
+      schema: public
+    webhook: http://sysfiscal_hook:8081/hook
+  type: create_event_trigger

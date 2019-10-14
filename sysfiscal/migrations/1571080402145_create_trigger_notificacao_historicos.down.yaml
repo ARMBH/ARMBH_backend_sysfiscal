@@ -1,0 +1,3 @@
+- args:
+    name: notificacao_historicos
+  type: delete_event_trigger
