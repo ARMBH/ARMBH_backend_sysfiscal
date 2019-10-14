@@ -32,7 +32,7 @@ services:
       HASURA_GRAPHQL_UNAUTHORIZED_ROLE: ${HASURA_GRAPHQL_UNAUTHORIZED_ROLE:?err}
   hook:
     container_name: sysfiscal_hook
-    image: hook
+    image: perrout/hook:14out
     ports:
     - "8081:8081"
     restart: always
