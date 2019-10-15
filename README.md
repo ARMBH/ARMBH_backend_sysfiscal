@@ -107,6 +107,7 @@ hasura migrate status
 
 Execute as seguintes consultas no Banco de Dados para adição dos dados padrões do sistema:
 ```
+mutation inserirDados {
 # Insere todos os dados padrões do Sistema
 #Tabela Origems
   insert_origems(objects: [
