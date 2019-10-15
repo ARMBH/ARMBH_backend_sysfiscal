@@ -6,6 +6,7 @@ const bodyParser = require("body-parser");
 const app = express();
 //Envia Email
 const gmail = require('./mailTransportantion');
+const htmlEmail = require("./mailTemplate");
 
 //Para Graphql
 const { request, GraphQLClient } = require("graphql-request");
@@ -43,12 +44,20 @@ function enviaEmail(data, payload) {
   interessados.forEach(function(item) {
     const email = item.interessado.email;
     const assunto = `[ARMBH - Sistema de Fiscalização] Processo ${item.processo.id} - ${item.processo.name}`;
-    const message = `Prezado(a) ${item.interessado.tratamento} ${
+    let message = `Prezado(a) ${item.interessado.tratamento} ${
       item.interessado.name
     },<br>
       O Processo ${item.processo.id} - ${item.processo.name} foi alterado:<br>
       ${payload["name"]}`;
     console.log(message);
+    message = htmlEmail.templateMail(
+      item.interessado.email,
+      item.interessado.tratamento,
+      item.interessado.name,
+      item.processo.id,
+      item.processo.name,
+      payload["name"]
+    );
     gmail.enviaEmail(email,message, assunto);
   });
 }
