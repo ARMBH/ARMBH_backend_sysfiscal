@@ -32,7 +32,7 @@ services:
       HASURA_GRAPHQL_UNAUTHORIZED_ROLE: ${HASURA_GRAPHQL_UNAUTHORIZED_ROLE:?err}
   hook:
     container_name: sysfiscal_hook
-    image: perrout/hook:15out
+    image: perrout/hook
     ports:
     - "8081:8081"
     restart: always
@@ -42,5 +42,23 @@ services:
       SMTP_ADDRESS: ${SMTP_ADDRESS:?err}
       SMTP_PORT: ${SMTP_PORT:?err}
       SMTP_PASSWORD: ${SMTP_PASSWORD:?err}
+      AUTH0_API_URL: ${AUTH0_API_URL:?err}
+      AUTH0_TOKEN_URL: ${AUTH0_TOKEN_URL:?err}
+      AUTH0_CLIENTID: ${AUTH0_CLIENTID:?err}
+      AUTH0_CLIENTSECRET: ${AUTH0_CLIENTSECRET:?err}
+  frontend:
+    container_name: sysfiscal_frontend
+    image: perrout/sysfiscal_frontend
+    ports:
+    - "5000:80"
+    restart: always
+    environment:
+      REACT_APP_HASURA_GRAPHQL_ENGINE_HOSTNAME: ${REACT_APP_HASURA_GRAPHQL_ENGINE_HOSTNAME:?err}
+      REACT_APP_REACT_APOLLO_FRONTEND: ${REACT_APP_REACT_APOLLO_FRONTEND:?err}
+      REACT_APP_AUTHCLIENTID: ${REACT_APP_AUTHCLIENTID:?err}
+      REACT_APP_AUTHDOMAIN: ${REACT_APP_AUTHDOMAIN:?err}
+      REACT_APP_VERSAO: ${REACT_APP_VERSAO:?err}
+      REACT_APP_HOOK: ${REACT_APP_HOOK:?err}
+      GENERATE_SOURCEMAP: ${GENERATE_SOURCEMAP:?err} 
 volumes:
   db_data:

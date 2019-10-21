@@ -1,0 +1,6 @@
+- args:
+    sql: ALTER TABLE ONLY "public"."users" ALTER COLUMN "role" SET DEFAULT 'NOVO';
+  type: run_sql
+- args:
+    sql: COMMENT ON COLUMN "public"."users"."role" IS E'null'
+  type: run_sql
