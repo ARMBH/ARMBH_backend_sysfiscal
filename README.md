@@ -85,7 +85,7 @@ cd sysfiscal
 ```
 Inicie o console
 ```
-hasura console
+hasura console --admin-secret=<your-admin-secret>
 ```
 ## Dados iniciais
 Migre o esquema de banco de dados executando os comandos a partir de
