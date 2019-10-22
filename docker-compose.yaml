@@ -1,17 +1,17 @@
-version: '3.6'
+version: "3.6"
 services:
   postgres:
     image: postgres
     restart: always
     volumes:
-    - db_data:/var/lib/postgresql/data
+      - db_data:/var/lib/postgresql/data
   pgadmin:
     image: dpage/pgadmin4
     restart: always
     depends_on:
-    - postgres
+      - postgres
     ports:
-    - 5050:80
+      - 5050:80
     ## you can change pgAdmin default username/password with below environment variables
     environment:
       PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL:?err}
@@ -20,9 +20,9 @@ services:
     container_name: sysfiscal_hasura
     image: hasura/graphql-engine:v1.0.0-beta.2
     ports:
-    - "8080:8080"
+      - "8080:8080"
     depends_on:
-    - "postgres"
+      - "postgres"
     restart: always
     environment:
       HASURA_GRAPHQL_DATABASE_URL: postgres://postgres:@postgres:5432/postgres
@@ -34,7 +34,7 @@ services:
     container_name: sysfiscal_hook
     image: perrout/hook
     ports:
-    - "8081:8081"
+      - "8081:8081"
     restart: always
     environment:
       HASURA_GRAPHQL_ADMIN_SECRET: ${HASURA_GRAPHQL_ADMIN_SECRET:?err}
@@ -48,9 +48,9 @@ services:
       AUTH0_CLIENTSECRET: ${AUTH0_CLIENTSECRET:?err}
   frontend:
     container_name: sysfiscal_frontend
-    image: perrout/sysfiscal_frontend
+    image: perrout/sysfiscal_frontend:v8
     ports:
-    - "5000:80"
+      - "80:80"
     restart: always
     environment:
       REACT_APP_HASURA_GRAPHQL_ENGINE_HOSTNAME: ${REACT_APP_HASURA_GRAPHQL_ENGINE_HOSTNAME:?err}
@@ -59,6 +59,6 @@ services:
       REACT_APP_AUTHDOMAIN: ${REACT_APP_AUTHDOMAIN:?err}
       REACT_APP_VERSAO: ${REACT_APP_VERSAO:?err}
       REACT_APP_HOOK: ${REACT_APP_HOOK:?err}
-      GENERATE_SOURCEMAP: ${GENERATE_SOURCEMAP:?err} 
+      GENERATE_SOURCEMAP: ${GENERATE_SOURCEMAP:?err}
 volumes:
   db_data:
