@@ -1,0 +1,22 @@
+- args:
+    enable_manual: false
+    headers: []
+    name: notificacao_update_user
+    retry_conf:
+      interval_sec: 10
+      num_retries: 0
+      timeout_sec: 60
+    table:
+      name: users
+      schema: public
+    update:
+      columns:
+      - email_verificado
+      - cpf
+      - email
+      - id
+      - name
+      - role
+      - telefone
+    webhook: http://sysfiscal_hook:8081/update_user
+  type: create_event_trigger

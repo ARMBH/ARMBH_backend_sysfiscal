@@ -51,6 +51,7 @@ function verificaJwt(jwt) {
   }
 }
 
+//Usado pelo /hook
 function enviaEmail(data, payload) {
   //console.log(data)
   const interessados = data.processos_interessados;
@@ -76,6 +77,7 @@ function enviaEmail(data, payload) {
   });
 }
 
+//usado pelo /hook
 function consulta(payload) {
   const variables = { processo_id: payload.processo_id };
   const headers = {
@@ -96,6 +98,19 @@ function consulta(payload) {
     });
 }
 
+//usado pelo /update_user
+function notficia_user(payload)
+{
+    const email = payload.email;
+    const assunto = `[ARMBH - Sistema de Fiscalização] Seu usuário foi alterado`;
+    let message = `Prezado(a) ${payload.name},<br>
+      Seu usuário foi alterado no Sistema.<br>
+      Perfil: ${payload.role}`;
+    console.log(message);
+    gmail.enviaEmail(email, message, assunto);
+ 
+}
+
 app.use("/", express.static(path.join(__dirname, "public")));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -112,6 +127,14 @@ app.post("/hook", function (req, res) {
   const port = process.env.PORT;
   //console.log("Your port is " + process.env.HASURA_GRAPHQL_ADMIN_SECRET);
   consulta(payload);
+  res.end("Recebido -> " + JSON.stringify(req.body.event.data.new));
+});
+
+app.post("/update_user", function (req, res) {
+  console.log(req.body)
+  console.log(req.body.event.data.new);
+  const payload = req.body.event.data.new;
+  notficia_user(payload);
   res.end("Recebido -> " + JSON.stringify(req.body.event.data.new));
 });
 
