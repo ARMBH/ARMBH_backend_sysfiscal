@@ -1,0 +1,6 @@
+- args:
+    sql: ALTER TABLE "public"."demandas" ALTER COLUMN "coordenada_y" DROP NOT NULL;
+  type: run_sql
+- args:
+    sql: COMMENT ON COLUMN "public"."demandas"."coordenada_y" IS E''
+  type: run_sql
