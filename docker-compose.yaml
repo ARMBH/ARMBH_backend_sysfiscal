@@ -26,13 +26,13 @@ services:
     restart: always
     environment:
       HASURA_GRAPHQL_DATABASE_URL: postgres://postgres:@postgres:5432/postgres
-      HASURA_GRAPHQL_ENABLE_CONSOLE: "true" # set to "false" to disable console
+      HASURA_GRAPHQL_ENABLE_CONSOLE: "${HASURA_CONSOLE:?err}" # set to "false" to disable console
       HASURA_GRAPHQL_ADMIN_SECRET: ${HASURA_GRAPHQL_ADMIN_SECRET:?err}
       HASURA_GRAPHQL_JWT_SECRET: ${HASURA_GRAPHQL_JWT_SECRET:?err}
       HASURA_GRAPHQL_UNAUTHORIZED_ROLE: ${HASURA_GRAPHQL_UNAUTHORIZED_ROLE:?err}
   hook:
     container_name: sysfiscal_hook
-    image: perrout/hook:v2
+    image: perrout/hook:v3
     ports:
       - "8081:8081"
     restart: always
@@ -48,9 +48,9 @@ services:
       AUTH0_CLIENTSECRET: ${AUTH0_CLIENTSECRET:?err}
   frontend:
     container_name: sysfiscal_frontend
-    image: perrout/sysfiscal_frontend:v11b
+    image: perrout/sysfiscal_frontend:v15
     ports:
-      - "80:80"
+      - "3000:80"
     restart: always
 volumes:
   db_data:
