@@ -238,10 +238,11 @@ Devido às restrições da política CAMG não é possível testar a autenticaç
 docker build -t conta/img:tag .
 `
 
-Enviando a IMG para a nuvem:
-`
+## Enviando a IMG para a nuvem:
+
+```
 docker push conta/img:tag
-`
+```
 ---------------------------------
 
 ### Referência
