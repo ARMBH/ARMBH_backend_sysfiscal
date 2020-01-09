@@ -85,7 +85,7 @@ function enviaEmail(data) {
 function main() {
   const variables = { processo_id: payload.processo_id };
   const headers = {
-    "x-hasura-admin-secret": "tocantins"
+    "x-hasura-admin-secret": process.env.HASURA_GRAPHQL_ADMIN_SECRET
   };
   const client = new GraphQLClient(url, { headers: headers });
 
