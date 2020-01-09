@@ -243,6 +243,24 @@ docker build -t conta/img:tag .
 ```
 docker push conta/img:tag
 ```
+
+
+# Produção
+
+O sistema está hospedado na máquina da PRODEMGE.
+
+O arquivo `docker-compose.yaml` e `.env` com as variáveis de configuração estão localizados em:
+
+````
+~/sysfiscal
+```
+
+Quando uma versão do Backend ou FrontEnd for publicada na nuvem do Docker, basta alterar o arquivo `docker-compose.yaml` e, dentro do diretório, executar o comando:
+
+```
+sudo docker-compose up -d
+```
+
 ---------------------------------
 
 ### Referência
