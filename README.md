@@ -264,12 +264,12 @@ sudo docker-compose up -d
 
 ## Sistema de Login
 
-O sistema de login atualmente é mantido em `[https://auth0.com](https://auth0.com)`.
+O sistema de login atualmente é mantido em [https://auth0.com](https://auth0.com).
 
 Para adicionar novas administradores do sistema de login basta visitar a seguinte página:
-```
+
 [https://manage.auth0.com/#/tenant/admins](https://manage.auth0.com/#/tenant/admins)
-```
+
 
 ---------------------------------
 
