@@ -251,7 +251,7 @@ O sistema está hospedado na máquina da PRODEMGE.
 
 O arquivo `docker-compose.yaml` e `.env` com as variáveis de configuração estão localizados em:
 
-````
+```
 ~/sysfiscal
 ```
 
