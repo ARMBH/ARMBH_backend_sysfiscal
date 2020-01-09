@@ -261,6 +261,16 @@ Quando uma versão do Backend ou FrontEnd for publicada na nuvem do Docker, bast
 sudo docker-compose up -d
 ```
 
+
+## Sistema de Login
+
+O sistema de login atualmente é mantido em `auth0.com`.
+
+Para adicionar novas administradores do sistema de login basta visitar a seguinte página:
+```
+https://manage.auth0.com/#/tenant/admins
+```
+
 ---------------------------------
 
 ### Referência
