@@ -46,7 +46,7 @@ docker run -v armbh_backend_sysfiscal_db_data:/volume -v /tmp:/backup --rm loomc
 ```
 
 Esta cópia foi pra dentro da imagem loomchild/volume-backup
-`Faça o backup da imagem para migrar para outro servidor - !ATENÇÃO - FALTA TESTAR`
+`Faça o backup da imagem para migrar para outro servidor`
 
 ## Restore do volume de dados em novo host
 Migre a imagem gerada no passo anterior para o novo host
